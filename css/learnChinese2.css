@@ -1,0 +1,338 @@
+html, body
+{
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color:#e094b3;
+	font-size: calc(12px + 0.5vw);
+}
+
+body{
+	display:grid;
+	grid-template-areas:
+	'header'
+	'main'
+	'footer';
+	grid-template-columns:100%;
+	grid-template-rows:60px 40px auto 40px;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a, p, h1, h2, h3, h4, h5
+{
+	color:black;
+}
+
+ul
+{
+	padding:0;
+	margin:0;
+}
+
+li
+{
+	list-style-type: none;
+	padding:10px;
+	margin:5px;
+}
+
+h2
+{
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 1%;
+	font-size: calc(5px + 3vw);
+}
+.header
+{
+	display:flex;
+	grid-area:"header";
+	background-color:#e094b3;
+	
+/*	justify-content:center;*/
+}
+
+.main
+{
+	grid-area:"main";
+	height:100%;
+	width: 100%;
+	background-color:white;
+}
+
+.footer
+{
+	grid-area:"footer";
+	background-color:#e094b3;
+}
+
+.vertical
+{
+	display:flex;
+	flex-direction:column;
+}
+
+.horizontal
+{
+	display:flex;
+	flex-direction:row;
+}
+
+.center
+{
+	justify-content:center;
+	align-items:center;
+}
+
+.dropDown
+{
+	position:relative;
+	display:inline-block;
+	text-align:center;
+	min-width:8vw;
+	padding:5px 0 5px 0;
+}
+.dropDownContainer
+{
+	min-width:8vw;
+
+}
+.dropDownContent
+{
+	display:none;
+	position: absolute;
+	min-width:8vw;
+	text-align:center;
+	background-color:yellow;
+}
+
+@media(hover: hover) and (pointer: fine)
+{
+	.dropDown:hover{
+		background-color:#94e0e0;
+	}
+
+	.dropDownContent li:hover
+	{
+		background-color:#94e0e0;
+	}
+	.dropDownContainer:hover .dropDownContent
+	{
+		display:block;
+		background-color:#e094b3;
+	}
+}
+
+.dropDownContent li
+{
+	margin:0;
+	padding:5px 0 5px 0;
+}
+
+.dropDownContent li a
+{
+	padding:5px auto 5px auto;
+	width:100%;
+	display:block;
+}
+.menu li
+{
+	padding:5px;
+	margin:0;
+}
+.mainContent p
+{
+	text-align:center;
+	margin:0 25% 100px 25%;
+}
+.menu
+{
+	position:sticky;
+	top:0;
+	background-color:#e094b3;
+}
+
+.siteTitle
+{
+	text-align:center;
+	margin:5px;
+	font-size:2em;
+}
+
+.sectionTitle
+{
+	text-align: center;
+	padding:11% 0;
+	font-size: calc(18px + 5vw);
+	margin:0 0 0 0;
+	min-height: 180px;
+
+}
+
+.main h1
+{
+	text-align:center;
+	font-size: calc(12px + 1vw);
+}
+.footerLinks li
+{
+	margin:0;
+}
+
+.filler{
+	height:500px;
+}
+
+#choiceOne, #choiceTwo, #choiceThree, #choiceFour, #question
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	border-style:solid;
+	grid-auto-flow:column;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr 1fr;
+}
+
+@media(hover: hover) and (pointer: fine){
+	#choiceOne:hover, #choiceTwo:hover, #choiceThree:hover, #choiceFour:hover, #optionHanziPinyin:hover, #optionDualEnglish:hover, #optionHanziEnglish:hover
+	{
+		background-color:#94e0e0;
+	}
+}
+#choiceOne p, #choiceTwo p, #choiceThree p, #choiceFour p, #question p
+{
+	height:100%;
+	width:100%;
+	min-height: 35px;
+	margin:0;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+p#questionEnglish
+{
+	display:none;
+	grid-row:1 / 3;
+}
+
+p#choiceOneEnglish, p#choiceTwoEnglish, p#choiceThreeEnglish, p#choiceFourEnglish, p#questionEnglish
+{
+	grid-row:1 / 3;
+}
+
+p#choiceOneImage, p#choiceTwoImage, p#choiceThreeImage, p#choiceFourImage, p#questionImage
+{
+	display:none;
+	border-top:dashed;
+}
+
+p#choiceOneHanzi, p#choiceTwoHanzi, p#choiceThreeHanzi, p#choiceFourHanzi
+{
+	display:none;
+
+}
+
+p#choiceOnePinyin, p#choiceTwoPinyin, p#choiceThreePinyin, p#choiceFourPinyin
+{
+	display:none;
+
+}
+
+p#choiceOnePinyin, p#choiceTwoPinyin, p#choiceThreePinyin, p#choiceFourPinyin, p#questionPinyin
+{
+	border-top:dashed;
+}
+
+#correct, #incorrect
+{
+	border: 2px solid;
+	border-radius:10px;
+	padding:5px;
+	margin: 5px 5px 5px 5px;
+}
+#question
+{
+	grid-column: 1/5;
+}
+
+.mainContent
+{
+	width:80%;
+	display:grid;
+	align-self: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows:1fr 1fr;
+}
+
+#quizGame
+{
+	display:grid;
+	justify-items:center;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding-bottom: calc(10px + 4%);
+	min-height: 247px;
+}
+
+.twoCard
+{
+	font-size: calc(12px + 4vw);
+}
+
+.oneCard
+{
+	font-size: calc(5px + 4vw);
+}
+
+#resultsScreen
+{
+	font-size: calc(5px + 4vw);
+	padding:5%;
+	text-align: center;
+	margin:0 0 0 0;
+	min-height: 223px;
+}
+
+#optionHanziPinyin, #optionDualEnglish, #optionHanziEnglish
+{
+	border:2px solid;
+	padding:1px;
+	margin:2px 2px 0 2px;
+	display:inline-block;
+}
+
+#showAnswer
+{
+	border-style: solid;
+	position: absolute;
+	left:12.5%;
+	top:50vh;
+	width: 75%;
+	background-color: white;
+	box-shadow: 10px 10px 5px grey;
+	display: none;
+}
+
+#correctedAnswer
+{
+	text-align: center;
+	font-size: 2.7rem;
+	margin: 0 0 20px 0;
+}
+#closeThis
+{
+	margin-top: 0;
+	text-align: right;
+	font-size: 1.5rem;
+}
+
+:lang(zh-Hans)
+{
+	font-family:"Times New Roman", Times, serif;
+}
